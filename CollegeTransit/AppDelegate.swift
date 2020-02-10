@@ -8,14 +8,39 @@
 
 import UIKit
 import CoreData
+import MapKit
+import CoreLocation
+
+
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
 
-
+    var map: MKMapView?
+    
+    private var coreLocationManager: CLLocationManager = CLLocationManager()
+    private var annotations: [Int: MKPointAnnotation] = [Int: MKPointAnnotation]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        coreLocationManager.delegate = self
+        map?.delegate = self
+        
+        coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // Requests to use location while using the app
+        coreLocationManager.requestWhenInUseAuthorization()
+        
+        coreLocationManager.startUpdatingLocation()
+
+        
+        RouteFetcher()
+
+        
+        
+        
         return true
     }
 
@@ -79,4 +104,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B07B21F23F1ED1700158968 /* RouteFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07B21E23F1ED1700158968 /* RouteFetcher.swift */; };
+		9B07B22123F1EF5B00158968 /* BusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07B22023F1EF5B00158968 /* BusListView.swift */; };
+		9B73E8DB23F1F89400EE608E /* BusFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73E8DA23F1F89400EE608E /* BusFetcher.swift */; };
+		9B73E8DD23F1FBCB00EE608E /* RouteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73E8DC23F1FBCB00EE608E /* RouteListView.swift */; };
+		9B91DF3823E6104A00994C8C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B91DF3723E6104A00994C8C /* Route.swift */; };
+		9BB6572123E5FC19003F44A2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6572023E5FC19003F44A2 /* MapView.swift */; };
+		9BB6572323E5FFF8003F44A2 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6572223E5FFF8003F44A2 /* Bus.swift */; };
 		9BB6761E23E5E48A00AE73ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6761D23E5E48A00AE73ED /* AppDelegate.swift */; };
 		9BB6762023E5E48A00AE73ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6761F23E5E48A00AE73ED /* SceneDelegate.swift */; };
 		9BB6762323E5E48A00AE73ED /* CollegeTransit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6762123E5E48A00AE73ED /* CollegeTransit.xcdatamodeld */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B07B21E23F1ED1700158968 /* RouteFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFetcher.swift; sourceTree = "<group>"; };
+		9B07B22023F1EF5B00158968 /* BusListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListView.swift; sourceTree = "<group>"; };
+		9B73E8DA23F1F89400EE608E /* BusFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusFetcher.swift; sourceTree = "<group>"; };
+		9B73E8DC23F1FBCB00EE608E /* RouteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListView.swift; sourceTree = "<group>"; };
+		9B91DF3723E6104A00994C8C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		9BB6572023E5FC19003F44A2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9BB6572223E5FFF8003F44A2 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		9BB6761A23E5E48A00AE73ED /* CollegeTransit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeTransit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB6761D23E5E48A00AE73ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BB6761F23E5E48A00AE73ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +80,13 @@
 				9BB6762E23E5E48B00AE73ED /* Info.plist */,
 				9BB6762123E5E48A00AE73ED /* CollegeTransit.xcdatamodeld */,
 				9BB6762823E5E48B00AE73ED /* Preview Content */,
+				9BB6572023E5FC19003F44A2 /* MapView.swift */,
+				9BB6572223E5FFF8003F44A2 /* Bus.swift */,
+				9B91DF3723E6104A00994C8C /* Route.swift */,
+				9B07B21E23F1ED1700158968 /* RouteFetcher.swift */,
+				9B07B22023F1EF5B00158968 /* BusListView.swift */,
+				9B73E8DA23F1F89400EE608E /* BusFetcher.swift */,
+				9B73E8DC23F1FBCB00EE608E /* RouteListView.swift */,
 			);
 			path = CollegeTransit;
 			sourceTree = "<group>";
@@ -149,10 +170,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB6572323E5FFF8003F44A2 /* Bus.swift in Sources */,
 				9BB6761E23E5E48A00AE73ED /* AppDelegate.swift in Sources */,
 				9BB6762323E5E48A00AE73ED /* CollegeTransit.xcdatamodeld in Sources */,
+				9B73E8DD23F1FBCB00EE608E /* RouteListView.swift in Sources */,
 				9BB6762523E5E48A00AE73ED /* ContentView.swift in Sources */,
+				9B91DF3823E6104A00994C8C /* Route.swift in Sources */,
+				9B07B21F23F1ED1700158968 /* RouteFetcher.swift in Sources */,
+				9BB6572123E5FC19003F44A2 /* MapView.swift in Sources */,
 				9BB6762023E5E48A00AE73ED /* SceneDelegate.swift in Sources */,
+				9B73E8DB23F1F89400EE608E /* BusFetcher.swift in Sources */,
+				9B07B22123F1EF5B00158968 /* BusListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
