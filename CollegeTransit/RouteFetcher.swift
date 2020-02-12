@@ -9,7 +9,7 @@
 import Foundation
 
 public class RouteFetcher: ObservableObject {
-    @Published var routes = [String: Route]()
+    @Published var routes = [Route]()
     
     init(){
         load()
@@ -42,8 +42,8 @@ public class RouteFetcher: ObservableObject {
                 // further process data
                 DispatchQueue.main.async {
                     for routeData in transitSystem.data!{
-                        //self.routes[routeData.key] = routeData.value[0]
-                        print(routeData)
+                        
+                        self.routes.append(routeData.value[0])
                     }
                     print("Routes retrieved")
                     print("Timestamp: \(Date().timeIntervalSinceReferenceDate * 1000)")

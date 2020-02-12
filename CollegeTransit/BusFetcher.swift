@@ -41,11 +41,17 @@ public class BusFetcher: ObservableObject {
                  //Decodes data
                  let busData = try JSONDecoder().decode(BusNetwork.self, from: data)
                  // further process data
+                
                  
                 DispatchQueue.main.async {
-                    for bus in busData.data{
+                    for var bus in busData.data {
+                        bus.latitude = bus.states![0].latitude!
+                        bus.longitude = bus.states![0].longitude!
+
                         self.buses.append(bus)
                     }
+                    
+                    
                     print("Buses retrieved")
                     print("Timestamp: \(Date().timeIntervalSinceReferenceDate * 1000)")
                 }

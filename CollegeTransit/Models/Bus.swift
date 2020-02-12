@@ -10,18 +10,23 @@ import Foundation
 import CoreLocation
 
 
-class BusNetwork: Decodable {
+struct BusNetwork: Decodable {
     let success: Bool?
     let message: String?
     let messages: String?
-    let data : [Bus]
+    var data : [Bus]
 }
 
-class Bus: Decodable, Identifiable {
+struct Bus: Decodable, Identifiable {
     var id: String
     var routeId: String // matches route shortName
     var patternName: String
-    //var latitude: Double?
-    //var longitude: Double?
-    
+    var states: [BusState]?
+    var latitude: Double?
+    var longitude: Double?
+}
+
+struct BusState: Decodable {
+    var latitude: Double?
+    var longitude: Double?
 }

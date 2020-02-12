@@ -21,6 +21,7 @@
 		9BB6762723E5E48B00AE73ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6762623E5E48B00AE73ED /* Assets.xcassets */; };
 		9BB6762A23E5E48B00AE73ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6762923E5E48B00AE73ED /* Preview Assets.xcassets */; };
 		9BB6762D23E5E48B00AE73ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6762B23E5E48B00AE73ED /* LaunchScreen.storyboard */; };
+		9BD2458523F4717100D1960A /* MapLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD2458423F4717100D1960A /* MapLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9BB6762923E5E48B00AE73ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BB6762C23E5E48B00AE73ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BB6762E23E5E48B00AE73ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD2458423F4717100D1960A /* MapLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B73E8DE23F22D1E00EE608E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BB6762423E5E48A00AE73ED /* ContentView.swift */,
+				9BB6572023E5FC19003F44A2 /* MapView.swift */,
+				9B07B22023F1EF5B00158968 /* BusListView.swift */,
+				9B73E8DC23F1FBCB00EE608E /* RouteListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B73E8DF23F22D2900EE608E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B91DF3723E6104A00994C8C /* Route.swift */,
+				9BB6572223E5FFF8003F44A2 /* Bus.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9BB6761123E5E48A00AE73ED = {
 			isa = PBXGroup;
 			children = (
@@ -72,21 +94,18 @@
 		9BB6761C23E5E48A00AE73ED /* CollegeTransit */ = {
 			isa = PBXGroup;
 			children = (
+				9B73E8DF23F22D2900EE608E /* Models */,
+				9B73E8DE23F22D1E00EE608E /* Views */,
 				9BB6761D23E5E48A00AE73ED /* AppDelegate.swift */,
 				9BB6761F23E5E48A00AE73ED /* SceneDelegate.swift */,
-				9BB6762423E5E48A00AE73ED /* ContentView.swift */,
 				9BB6762623E5E48B00AE73ED /* Assets.xcassets */,
 				9BB6762B23E5E48B00AE73ED /* LaunchScreen.storyboard */,
 				9BB6762E23E5E48B00AE73ED /* Info.plist */,
 				9BB6762123E5E48A00AE73ED /* CollegeTransit.xcdatamodeld */,
 				9BB6762823E5E48B00AE73ED /* Preview Content */,
-				9BB6572023E5FC19003F44A2 /* MapView.swift */,
-				9BB6572223E5FFF8003F44A2 /* Bus.swift */,
-				9B91DF3723E6104A00994C8C /* Route.swift */,
 				9B07B21E23F1ED1700158968 /* RouteFetcher.swift */,
-				9B07B22023F1EF5B00158968 /* BusListView.swift */,
 				9B73E8DA23F1F89400EE608E /* BusFetcher.swift */,
-				9B73E8DC23F1FBCB00EE608E /* RouteListView.swift */,
+				9BD2458423F4717100D1960A /* MapLocationManager.swift */,
 			);
 			path = CollegeTransit;
 			sourceTree = "<group>";
@@ -175,6 +194,7 @@
 				9BB6762323E5E48A00AE73ED /* CollegeTransit.xcdatamodeld in Sources */,
 				9B73E8DD23F1FBCB00EE608E /* RouteListView.swift in Sources */,
 				9BB6762523E5E48A00AE73ED /* ContentView.swift in Sources */,
+				9BD2458523F4717100D1960A /* MapLocationManager.swift in Sources */,
 				9B91DF3823E6104A00994C8C /* Route.swift in Sources */,
 				9B07B21F23F1ED1700158968 /* RouteFetcher.swift in Sources */,
 				9BB6572123E5FC19003F44A2 /* MapView.swift in Sources */,

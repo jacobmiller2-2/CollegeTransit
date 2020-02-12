@@ -1,5 +1,5 @@
 //
-//  List.swift
+//  RouteListView.swift
 //  CollegeTransit
 //
 //  Created by Jacob Miller on 2/10/20.
@@ -7,32 +7,26 @@
 //
 
 import SwiftUI
-import Combine
 
-struct BusListView: View {
-    @ObservedObject var fetcher = BusFetcher()
-    
+struct RouteListView: View {
+    @ObservedObject var fetcher = RouteFetcher()
     
     var body: some View {
-        
         VStack {
-            List(fetcher.buses) { bus in
+            List(fetcher.routes) { route in
                 VStack (alignment: .leading) {
-                    Text(bus.patternName)
+                    Text("\(route.id ?? "No routes at this time")")
                     
                         .font(.system(size: 11))
                         .foregroundColor(Color.gray)
                 }
             }
         }
-            
-        
-        
     }
 }
 
-struct BusListView_Previews: PreviewProvider {
+struct RouteListView_Previews: PreviewProvider {
     static var previews: some View {
-        BusListView()
+        RouteListView()
     }
 }

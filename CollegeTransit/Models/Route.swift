@@ -29,8 +29,10 @@ class Route: Decodable, Identifiable{
     var routeServiceLevel: String?
 
     enum CodingKeys: String, CodingKey {
-       case id = "routeName"
-       
+        case id = "routeName"
+        case routeShortName = "routeShortName"
+        case routeColor = "routeColor"
+        case routeServiceLevel = "routeServiceLevel"
     }
 }
 
