@@ -12,8 +12,6 @@ import MapKit
 import CoreLocation
 
 
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
 

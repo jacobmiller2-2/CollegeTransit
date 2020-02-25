@@ -36,18 +36,18 @@ struct ContentView: View {
     var body: some View {
     
         TabView{
-            MapView(annotations: $annotations)
+            MapView(annotations: $annotations).edgesIgnoringSafeArea(.top)
                 .tabItem{
                     Image(systemName: "1.square.fill")
                     Text("Map View")
                 }
             
-            BusListView()
+            BusListView(buses: bFetcher.buses)
                 .tabItem{
                     Image(systemName: "2.square.fill")
                     Text("Bus List")
                 }
-            RouteListView()
+            RouteListView(routes: rFetcher.routes)
                 .tabItem{
                     Image(systemName: "2.square.fill")
                     Text("Route List")

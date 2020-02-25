@@ -9,6 +9,7 @@
 import SwiftUI
 import MapKit
 
+
 struct MapView: UIViewRepresentable {
     
     @EnvironmentObject var fetcher: BusFetcher
@@ -32,7 +33,10 @@ struct MapView: UIViewRepresentable {
             let region = MKCoordinateRegion(center: location, span: span)
             mapView.setRegion(region, animated: true)
         }
-        
+        mapView.showsScale = true
+        mapView.showsTraffic = true
+        mapView.mapType = MKMapType.mutedStandard
+        mapView.isPitchEnabled = false
         return mapView
     }
     
@@ -40,6 +44,7 @@ struct MapView: UIViewRepresentable {
         let allAnnotations = view.annotations
         view.removeAnnotations(allAnnotations)
         view.addAnnotations(annotations)
+        
     }
     
 }

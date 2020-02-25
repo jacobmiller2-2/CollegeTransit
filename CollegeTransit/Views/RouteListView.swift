@@ -10,9 +10,13 @@ import SwiftUI
 
 struct RouteListView: View {
     @EnvironmentObject var fetcher: RouteFetcher
+    
+    @State var currentOrder = Sorting.SortOrders.ascending
+    @State var routes: [Route]
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            if(fetcher.routes.count == 0){
+        VStack{
+            if(routes.isEmpty){
                 VStack{
                     Image("route").resizable().frame(width: 180, height: 180)
                     Text("No Data!").font(.largeTitle).fontWeight(.heavy)
@@ -20,22 +24,35 @@ struct RouteListView: View {
                     Text("Please try again later").fontWeight(.medium)
                 }
             } else {
-                Text("Routes").font(.headline)
-                
-                List(fetcher.routes) { route in
-                    VStack (alignment: .leading) {
-                        Text("\(route.id ?? "No routes at this time")")    
-                            .font(.system(size: 11))
-                            .foregroundColor(Color.gray)
+                VStack(alignment: .leading){
+                    HStack{
+                        Text("Routes").font(.headline)
+                        Spacer()
+                        Button(action: {
+                            let signal = Sorting.cycleSortOrder(object: self.routes, currentOrder: self.currentOrder)
+                            self.currentOrder = signal.1
+                            self.routes = signal.0
+                            
+                        }){
+                            Text(currentOrder.toString())
+                        }
+                    }
+                    
+                    List(routes) { route in
+                        VStack (alignment: .leading) {
+                            HStack{
+                                Text("\(route.id!)")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.gray)
+                                Spacer()
+                                Text("\(route.routeShortName!)").font(.caption).foregroundColor(Color.gray)
+                            }
+                        }
+                    }.onReceive(fetcher.objectWillChange) {
+                        self.routes = Sorting.sort(object: self.fetcher.routes, by: self.currentOrder)
                     }
                 }
             }
         }.padding(.horizontal)//End VStack
-    }
-}
-
-struct RouteListView_Previews: PreviewProvider {
-    static var previews: some View {
-        RouteListView()
     }
 }

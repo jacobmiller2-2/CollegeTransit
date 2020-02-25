@@ -51,7 +51,7 @@ public class BusFetcher: ObservableObject {
 
                         newBuses.append(bus)
                     }
-                    
+                    newBuses.sort()
                     self.buses = newBuses
                     
                     print("Buses retrieved:\n\tTimestamp: \(Date().timeIntervalSinceReferenceDate * 1000)")

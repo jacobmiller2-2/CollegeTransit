@@ -14,6 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var busFetcher = BusFetcher()
     var routeFetcher = RouteFetcher()
+    var uPrefDelegate = UPrefDelegate()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -31,6 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = ContentView()
             .environmentObject(busFetcher)
             .environmentObject(routeFetcher)
+            .environmentObject(uPrefDelegate)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

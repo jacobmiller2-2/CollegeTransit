@@ -21,7 +21,15 @@ class TransitSystem: Decodable, Identifiable{
 
 
 
-class Route: Decodable, Identifiable{
+class Route: Decodable, Identifiable, Comparable{
+    static func == (lhs: Route, rhs: Route) -> Bool {
+        return lhs.routeShortName == rhs.routeShortName
+    }
+    
+    static func < (lhs: Route, rhs: Route) -> Bool {
+        return lhs.routeShortName! < rhs.routeShortName!
+    }
+    
     
     var id: String?
     var routeShortName: String?

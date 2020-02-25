@@ -17,7 +17,16 @@ struct BusNetwork: Decodable {
     var data : [Bus]
 }
 
-struct Bus: Decodable, Identifiable {
+struct Bus: Decodable, Identifiable, Comparable {
+    static func < (lhs: Bus, rhs: Bus) -> Bool {
+        return lhs.routeId < rhs.routeId
+    }
+
+    
+    static func == (lhs: Bus, rhs: Bus) -> Bool {
+        return lhs.routeId == rhs.routeId
+    }
+    
     var id: String
     var routeId: String // matches route shortName
     var patternName: String

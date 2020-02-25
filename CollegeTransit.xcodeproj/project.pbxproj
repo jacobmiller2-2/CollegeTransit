@@ -13,6 +13,8 @@
 		9B73E8DB23F1F89400EE608E /* BusFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73E8DA23F1F89400EE608E /* BusFetcher.swift */; };
 		9B73E8DD23F1FBCB00EE608E /* RouteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73E8DC23F1FBCB00EE608E /* RouteListView.swift */; };
 		9B91DF3823E6104A00994C8C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B91DF3723E6104A00994C8C /* Route.swift */; };
+		9BACFA7D2405B8DA00DDC217 /* UPrefDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACFA7C2405B8DA00DDC217 /* UPrefDelegate.swift */; };
+		9BACFA7F2405C15400DDC217 /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACFA7E2405C15400DDC217 /* Sorting.swift */; };
 		9BB6572123E5FC19003F44A2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6572023E5FC19003F44A2 /* MapView.swift */; };
 		9BB6572323E5FFF8003F44A2 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6572223E5FFF8003F44A2 /* Bus.swift */; };
 		9BB6761E23E5E48A00AE73ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6761D23E5E48A00AE73ED /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 		9BB6762723E5E48B00AE73ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6762623E5E48B00AE73ED /* Assets.xcassets */; };
 		9BB6762A23E5E48B00AE73ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6762923E5E48B00AE73ED /* Preview Assets.xcassets */; };
 		9BB6762D23E5E48B00AE73ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB6762B23E5E48B00AE73ED /* LaunchScreen.storyboard */; };
+		9BB6BE392405B13D00EB608A /* UPrefKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6BE382405B13D00EB608A /* UPrefKeys.swift */; };
+		9BFABD4E240578000012D5B7 /* UPrefManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFABD4D240578000012D5B7 /* UPrefManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,8 @@
 		9B73E8DA23F1F89400EE608E /* BusFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusFetcher.swift; sourceTree = "<group>"; };
 		9B73E8DC23F1FBCB00EE608E /* RouteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListView.swift; sourceTree = "<group>"; };
 		9B91DF3723E6104A00994C8C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		9BACFA7C2405B8DA00DDC217 /* UPrefDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPrefDelegate.swift; sourceTree = "<group>"; };
+		9BACFA7E2405C15400DDC217 /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
 		9BB6572023E5FC19003F44A2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9BB6572223E5FFF8003F44A2 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		9BB6761A23E5E48A00AE73ED /* CollegeTransit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeTransit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +48,8 @@
 		9BB6762923E5E48B00AE73ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BB6762C23E5E48B00AE73ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BB6762E23E5E48B00AE73ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BB6BE382405B13D00EB608A /* UPrefKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPrefKeys.swift; sourceTree = "<group>"; };
+		9BFABD4D240578000012D5B7 /* UPrefManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPrefManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,10 @@
 				9BB6762E23E5E48B00AE73ED /* Info.plist */,
 				9BB6762123E5E48A00AE73ED /* CollegeTransit.xcdatamodeld */,
 				9BB6762823E5E48B00AE73ED /* Preview Content */,
+				9BFABD4D240578000012D5B7 /* UPrefManager.swift */,
+				9BB6BE382405B13D00EB608A /* UPrefKeys.swift */,
+				9BACFA7C2405B8DA00DDC217 /* UPrefDelegate.swift */,
+				9BACFA7E2405C15400DDC217 /* Sorting.swift */,
 			);
 			path = CollegeTransit;
 			sourceTree = "<group>";
@@ -210,12 +222,16 @@
 				9BB6761E23E5E48A00AE73ED /* AppDelegate.swift in Sources */,
 				9BB6762323E5E48A00AE73ED /* CollegeTransit.xcdatamodeld in Sources */,
 				9B73E8DD23F1FBCB00EE608E /* RouteListView.swift in Sources */,
+				9BACFA7D2405B8DA00DDC217 /* UPrefDelegate.swift in Sources */,
 				9BB6762523E5E48A00AE73ED /* ContentView.swift in Sources */,
 				9B91DF3823E6104A00994C8C /* Route.swift in Sources */,
 				9B07B21F23F1ED1700158968 /* RouteFetcher.swift in Sources */,
 				9BB6572123E5FC19003F44A2 /* MapView.swift in Sources */,
 				9BB6762023E5E48A00AE73ED /* SceneDelegate.swift in Sources */,
+				9BB6BE392405B13D00EB608A /* UPrefKeys.swift in Sources */,
+				9BFABD4E240578000012D5B7 /* UPrefManager.swift in Sources */,
 				9B73E8DB23F1F89400EE608E /* BusFetcher.swift in Sources */,
+				9BACFA7F2405C15400DDC217 /* Sorting.swift in Sources */,
 				9B07B22123F1EF5B00158968 /* BusListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

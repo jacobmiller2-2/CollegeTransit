@@ -45,6 +45,7 @@ public class RouteFetcher: ObservableObject {
                     for routeData in transitSystem.data!{
                         newRoutes.append(routeData.value[0])
                     }
+                    newRoutes.sort()
                     self.routes = newRoutes
 
                     print("Routes retrieved:\n\tTimestamp: \(Date().timeIntervalSinceReferenceDate * 1000)")
