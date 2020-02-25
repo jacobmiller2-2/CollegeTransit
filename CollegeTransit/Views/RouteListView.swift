@@ -9,19 +9,28 @@
 import SwiftUI
 
 struct RouteListView: View {
-    @ObservedObject var fetcher = RouteFetcher()
-    
+    @EnvironmentObject var fetcher: RouteFetcher
     var body: some View {
-        VStack {
-            List(fetcher.routes) { route in
-                VStack (alignment: .leading) {
-                    Text("\(route.id ?? "No routes at this time")")
-                    
-                        .font(.system(size: 11))
-                        .foregroundColor(Color.gray)
+        VStack(alignment: .leading) {
+            if(fetcher.routes.count == 0){
+                VStack{
+                    Image("route").resizable().frame(width: 180, height: 180)
+                    Text("No Data!").font(.largeTitle).fontWeight(.heavy)
+                    Text("Sorry, but we can't connect you to the server").multilineTextAlignment(.center).lineLimit(5).font(.subheadline).foregroundColor(Color.secondaryLabel).padding()
+                    Text("Please try again later").fontWeight(.medium)
+                }
+            } else {
+                Text("Routes").font(.headline)
+                
+                List(fetcher.routes) { route in
+                    VStack (alignment: .leading) {
+                        Text("\(route.id ?? "No routes at this time")")    
+                            .font(.system(size: 11))
+                            .foregroundColor(Color.gray)
+                    }
                 }
             }
-        }
+        }.padding(.horizontal)//End VStack
     }
 }
 

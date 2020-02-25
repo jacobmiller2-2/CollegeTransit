@@ -19,24 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var map: MKMapView?
     
-    private var coreLocationManager: CLLocationManager = CLLocationManager()
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        coreLocationManager.delegate = self
-        
-        
-        coreLocationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        // Requests to use location while using the app
-        coreLocationManager.requestWhenInUseAuthorization()
-        
-        coreLocationManager.startUpdatingLocation()
-
-        
-        
         
         return true
     }

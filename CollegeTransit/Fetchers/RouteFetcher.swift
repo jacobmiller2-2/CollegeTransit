@@ -10,7 +10,7 @@ import Foundation
 
 public class RouteFetcher: ObservableObject {
     @Published var routes = [Route]()
-    
+
     init(){
         load()
     }
@@ -29,29 +29,32 @@ public class RouteFetcher: ObservableObject {
                 print("No response")
                 return
             }
-            
             guard let data = data else {
                 print("No data")
                 return
                 
             }
-        
+            
             do {
                 //Decodes data
                 let transitSystem = try JSONDecoder().decode(TransitSystem.self, from: data)
                 // further process data
+                
                 DispatchQueue.main.async {
+                    var newRoutes = [Route]()
                     for routeData in transitSystem.data!{
-                        
-                        self.routes.append(routeData.value[0])
+                        newRoutes.append(routeData.value[0])
                     }
-                    print("Routes retrieved")
-                    print("Timestamp: \(Date().timeIntervalSinceReferenceDate * 1000)")
-                }
+                    self.routes = newRoutes
 
+                    print("Routes retrieved:\n\tTimestamp: \(Date().timeIntervalSinceReferenceDate * 1000)")
+                }
             } catch let jsonError{
                 print("Error with json: ", jsonError)
             }
         }.resume()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 60){
+            self.load()
+        }
     }
 }
