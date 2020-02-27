@@ -30,12 +30,17 @@ struct Bus: Decodable, Identifiable, Comparable {
     var id: String
     var routeId: String // matches route shortName
     var patternName: String
+    var stopId: String
     var states: [BusState]?
     var latitude: Double?
     var longitude: Double?
+    var passengers: Int?
+    
+    var isStarred: Bool?
 }
 
 struct BusState: Decodable {
     var latitude: Double?
     var longitude: Double?
+    var passengers: Int?
 }

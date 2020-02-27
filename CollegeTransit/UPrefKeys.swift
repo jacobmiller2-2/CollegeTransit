@@ -10,11 +10,7 @@ import Foundation
 
 // Preference Keys
 let existsKey = "exists"
-let sortTypeKey = "sortType"
-let sortOrderKey = "sortOrder"
-
-// Value keys
-let sortAscendingKey = "sortAsc"
-let sortDescendingKey = "sortDesc"
-
-let sortAlpabeticKey = "sortAlphabetically"
+let starredRoutesKey = "starred"
+let mapScaleEnabledKey = "mapScale"
+let mapTrafficEnabledKey = "mapTraffic"
+let mapAllowPitchEnabledKey = "mapAllowPitch"

@@ -10,7 +10,8 @@ import Foundation
 
 class UPrefDelegate: ObservableObject {
     
-    @Published var currSortOrder: Sorting.SortOrders = Sorting.SortOrders.ascending
-    
-    
+    @Published var starredRoutes: [String] = UPrefManager.s.getStarredRoutes()
+    @Published var mapScaleEnabled = UPrefManager.s.getMapScaleEnabled()
+    @Published var mapTrafficEnabled = UPrefManager.s.getMapTrafficEnabled()
+    @Published var mapAllowPitchEnabled = UPrefManager.s.getMapAllowPitchEnabled()
 }

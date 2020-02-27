@@ -38,16 +38,14 @@ struct RouteListView: View {
                         }
                     }
                     
-                    List(routes) { route in
-                        VStack (alignment: .leading) {
-                            HStack{
-                                Text("\(route.id!)")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                Spacer()
-                                Text("\(route.routeShortName!)").font(.caption).foregroundColor(Color.gray)
+                    List {
+                        
+                        ForEach(routes) { route in
+                            VStack (alignment: .leading) {
+                                RouteView(route: route)
                             }
                         }
+                        
                     }.onReceive(fetcher.objectWillChange) {
                         self.routes = Sorting.sort(object: self.fetcher.routes, by: self.currentOrder)
                     }

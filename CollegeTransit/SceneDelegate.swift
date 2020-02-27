@@ -48,6 +48,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
+        UPrefManager.s.setStarredRoutes(routes: uPrefDelegate.starredRoutes)
+        UPrefManager.s.setMapScaleEnabled(isOn: uPrefDelegate.mapScaleEnabled)
+        UPrefManager.s.setMapTrafficEnabled(isOn: uPrefDelegate.mapTrafficEnabled)
+        UPrefManager.s.setMapAllowPitchEnabled(isOn: uPrefDelegate.mapAllowPitchEnabled)
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {

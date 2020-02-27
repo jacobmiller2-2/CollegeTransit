@@ -13,6 +13,7 @@ import MapKit
 struct MapView: UIViewRepresentable {
     
     @EnvironmentObject var fetcher: BusFetcher
+    @EnvironmentObject var uPrefs: UPrefDelegate
     @Binding var annotations: [MKPointAnnotation]
     
     func makeUIView(context: Context) -> MKMapView {
@@ -33,10 +34,11 @@ struct MapView: UIViewRepresentable {
             let region = MKCoordinateRegion(center: location, span: span)
             mapView.setRegion(region, animated: true)
         }
-        mapView.showsScale = true
-        mapView.showsTraffic = true
+        
+        mapView.showsScale = uPrefs.mapScaleEnabled
+        mapView.showsTraffic = uPrefs.mapTrafficEnabled
         mapView.mapType = MKMapType.mutedStandard
-        mapView.isPitchEnabled = false
+        mapView.isPitchEnabled = uPrefs.mapAllowPitchEnabled
         return mapView
     }
     

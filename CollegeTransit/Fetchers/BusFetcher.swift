@@ -48,6 +48,7 @@ public class BusFetcher: ObservableObject {
                     for var bus in busData.data {
                         bus.latitude = bus.states![0].latitude!
                         bus.longitude = bus.states![0].longitude!
+                        bus.passengers = bus.states![0].passengers!
 
                         newBuses.append(bus)
                     }

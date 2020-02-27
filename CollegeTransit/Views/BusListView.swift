@@ -11,9 +11,12 @@ import SwiftUI
 struct BusListView: View {
 
     @EnvironmentObject var busGetter: BusFetcher
-  
+    @EnvironmentObject var uPrefs: UPrefDelegate
+    
     @State var currentOrder = Sorting.SortOrders.ascending
     @State var buses: [Bus]
+    
+    @State var starredOnly = false;
     
     var body: some View {
         VStack {
@@ -37,24 +40,26 @@ struct BusListView: View {
                         }){
                             Text(currentOrder.toString())
                         }
+                        
                     }
                     
-                    List(buses) { bus in
-                        VStack (alignment: .leading) {
-                            HStack{
-                                Text(bus.patternName)
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                Spacer()
-                                Text("\(bus.id)")
-                                    .font(.caption)
-                                    .foregroundColor(Color.gray)
+                    Toggle(isOn: $starredOnly){
+                        Text("Show Starred Buses Only")
+                    }
+                    List{
+                        
+                        ForEach(buses) { bus in
+                            
+                            if !self.starredOnly || self.uPrefs.starredRoutes.contains(bus.routeId){
+                                VStack (alignment: .leading) {
+                                    BusView(bus: bus)
+                                }
                             }
                         }
-                    }.onReceive(busGetter.objectWillChange) {
+                    }
+                    .onReceive(busGetter.objectWillChange) {
                         self.buses = Sorting.sort(object: self.busGetter.buses, by: self.currentOrder)
                     }
-                    
                 }
             }
         }.padding(.horizontal)// End VStack

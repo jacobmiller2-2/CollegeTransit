@@ -10,11 +10,6 @@ import Foundation
 
 class Sorting {
     
-    
-    let sortOrders = [1: sortAscendingKey, 2: sortDescendingKey]
-    let sortTypes = [1: sortAlpabeticKey]
-    
-    
     func getSortOrder() -> SortOrders {
         return SortOrders.ascending
     }

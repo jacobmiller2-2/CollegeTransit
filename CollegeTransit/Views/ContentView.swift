@@ -34,7 +34,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-    
         TabView{
             MapView(annotations: $annotations).edgesIgnoringSafeArea(.top)
                 .tabItem{
@@ -49,9 +48,14 @@ struct ContentView: View {
                 }
             RouteListView(routes: rFetcher.routes)
                 .tabItem{
-                    Image(systemName: "2.square.fill")
+                    Image(systemName: "3.square.fill")
                     Text("Route List")
                 }
+            SettingsView()
+                .tabItem{
+                    Image(systemName: "gear")
+                    Text("Settings")
+            }
         }
         .edgesIgnoringSafeArea(.top)
         .onReceive(bFetcher.objectWillChange) {
