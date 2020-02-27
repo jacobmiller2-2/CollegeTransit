@@ -5,37 +5,19 @@
 //  Created by Jacob Miller on 2/1/20.
 //  Copyright © 2020 Jacob Miller. All rights reserved.
 //
-import MapKit
+
 import SwiftUI
 
 struct ContentView: View {
     
     @EnvironmentObject var bFetcher: BusFetcher
     @EnvironmentObject var rFetcher: RouteFetcher
-    @State var annotations = [MKPointAnnotation]()
     
-    func updateAnnotations() -> Void {
-        // If not empty, remove all entries, but keep storage
-        if(!annotations.isEmpty){
-            annotations.removeAll(keepingCapacity: true)
-        }
-        
-        for bus in bFetcher.buses{
-            // create annotation
-            let annotation = MKPointAnnotation()
-            
-            annotation.title = bus.routeId
-            annotation.subtitle = bus.patternName
-            annotation.coordinate = CLLocationCoordinate2D(latitude: bus.latitude!, longitude: bus.longitude!)
-            
-            // append to array
-            annotations.append(annotation)
-        }
-    }
     
+       
     var body: some View {
         TabView{
-            MapView(annotations: $annotations).edgesIgnoringSafeArea(.top)
+            MapContainer().edgesIgnoringSafeArea(.top)
                 .tabItem{
                     Image(systemName: "1.square.fill")
                     Text("Map View")
@@ -56,11 +38,8 @@ struct ContentView: View {
                     Image(systemName: "gear")
                     Text("Settings")
             }
-        }
-        .edgesIgnoringSafeArea(.top)
-        .onReceive(bFetcher.objectWillChange) {
-            self.updateAnnotations()
-        }
+        }.edgesIgnoringSafeArea(.init(.top))
+        
     }
 }
 

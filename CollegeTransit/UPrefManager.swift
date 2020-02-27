@@ -26,9 +26,10 @@ class UPrefManager: ObservableObject {
             prefs.set(true, forKey: existsKey)
             
             prefs.set([String](), forKey: starredRoutesKey)
-            prefs.set(false, forKey: mapScaleEnabledKey)
+            prefs.set(false, forKey: mapCompassEnabledKey)
             prefs.set(true, forKey: mapTrafficEnabledKey)
             prefs.set(false, forKey: mapAllowPitchEnabledKey)
+            prefs.set(false, forKey: showStarredOnStartupLKey)
         }
     }
     
@@ -49,12 +50,12 @@ class UPrefManager: ObservableObject {
         prefs.set(routes, forKey: starredRoutesKey)
     }
     
-    func setMapScaleEnabled(isOn: Bool){
-        prefs.set(isOn, forKey: mapScaleEnabledKey)
+    func setMapCompassEnabled(isOn: Bool){
+        prefs.set(isOn, forKey: mapCompassEnabledKey)
     }
     
-    func getMapScaleEnabled() -> Bool{
-        return prefs.bool(forKey: mapScaleEnabledKey)
+    func getMapCompassEnabled() -> Bool{
+        return prefs.bool(forKey: mapCompassEnabledKey)
     }
     
     func setMapTrafficEnabled(isOn: Bool){
@@ -73,5 +74,11 @@ class UPrefManager: ObservableObject {
         return prefs.bool(forKey: mapAllowPitchEnabledKey)
     }
     
+    func setShowStarredOnStartup(isOn: Bool){
+        prefs.set(isOn, forKey: showStarredOnStartupLKey)
+    }
     
+    func getShowStarredOnStartup() -> Bool {
+        return prefs.bool(forKey: showStarredOnStartupLKey)
+    }
 }

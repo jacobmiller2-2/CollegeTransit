@@ -15,6 +15,7 @@ struct MapView: UIViewRepresentable {
     @EnvironmentObject var fetcher: BusFetcher
     @EnvironmentObject var uPrefs: UPrefDelegate
     @Binding var annotations: [MKPointAnnotation]
+    @Binding var starredOnly: Bool
     
     func makeUIView(context: Context) -> MKMapView {
         
@@ -35,7 +36,7 @@ struct MapView: UIViewRepresentable {
             mapView.setRegion(region, animated: true)
         }
         
-        mapView.showsScale = uPrefs.mapScaleEnabled
+        mapView.showsCompass = uPrefs.mapCompassEnabled
         mapView.showsTraffic = uPrefs.mapTrafficEnabled
         mapView.mapType = MKMapType.mutedStandard
         mapView.isPitchEnabled = uPrefs.mapAllowPitchEnabled
@@ -45,7 +46,18 @@ struct MapView: UIViewRepresentable {
     func updateUIView(_ view: MKMapView, context: Context){
         let allAnnotations = view.annotations
         view.removeAnnotations(allAnnotations)
-        view.addAnnotations(annotations)
+        
+        if (starredOnly){
+            var starredAnnotations = [MKPointAnnotation]()
+            for annotation in annotations{
+                if uPrefs.starredRoutes.contains(annotation.title!){
+                    starredAnnotations.append(annotation)
+                }
+            }
+            view.addAnnotations(starredAnnotations)
+        } else {
+            view.addAnnotations(annotations)
+        }
         
     }
     

@@ -49,9 +49,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
         UPrefManager.s.setStarredRoutes(routes: uPrefDelegate.starredRoutes)
-        UPrefManager.s.setMapScaleEnabled(isOn: uPrefDelegate.mapScaleEnabled)
+        UPrefManager.s.setMapCompassEnabled(isOn: uPrefDelegate.mapCompassEnabled)
         UPrefManager.s.setMapTrafficEnabled(isOn: uPrefDelegate.mapTrafficEnabled)
         UPrefManager.s.setMapAllowPitchEnabled(isOn: uPrefDelegate.mapAllowPitchEnabled)
+        UPrefManager.s.setShowStarredOnStartup(isOn: uPrefDelegate.showStarredOnStartup)
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {

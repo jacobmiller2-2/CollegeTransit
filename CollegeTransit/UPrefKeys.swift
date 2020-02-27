@@ -11,6 +11,7 @@ import Foundation
 // Preference Keys
 let existsKey = "exists"
 let starredRoutesKey = "starred"
-let mapScaleEnabledKey = "mapScale"
+let mapCompassEnabledKey = "mapCompass"
 let mapTrafficEnabledKey = "mapTraffic"
 let mapAllowPitchEnabledKey = "mapAllowPitch"
+let showStarredOnStartupLKey = "starredOnStartup"

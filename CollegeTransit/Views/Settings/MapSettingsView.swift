@@ -16,16 +16,21 @@ struct MapSettingsView: View {
         VStack {
             List{
                 Section(header: Text("Map Interactions"), footer: Text("Map pitch allows viewing the map at an angle")){
-                    Toggle(isOn: $uPrefs.mapScaleEnabled){
-                        Text("Show map scale")
+                    Toggle(isOn: $uPrefs.mapCompassEnabled){
+                        Text("Show Compass")
                     }
                     Toggle(isOn: $uPrefs.mapTrafficEnabled){
-                        Text("Show traffic")
+                        Text("Show Traffic")
                     }
                     Toggle(isOn: $uPrefs.mapAllowPitchEnabled){
-                        Text("Allow map pitch")
+                        Text("Allow Map Pitch")
                     }
                 }// End Section
+                Section(footer: Text("Configure whether only starred routes are shown are mapped on startup")){
+                    Toggle(isOn: $uPrefs.showStarredOnStartup){
+                        Text("Only Starred Startup")
+                    }
+                }
                 
             }// End List
             Spacer()
